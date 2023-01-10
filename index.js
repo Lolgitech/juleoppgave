@@ -1,51 +1,62 @@
-const name = login()
-
-const person = () => {
-  let name = hello {name}
-
-  return (
-    <div username="name">
-      <h3> hello, {name}</h3>
-</div>
-  );
-
-  
-}
-
-
-
-const wishList = [];
-
 function addWish() {
-  let item = document.getElementById("wish-input").value;
-  wishList.push(item);
-  displayWishes();
-  document.getElementById("add-wish-form").reset();
+  const name = document.getElementById("wish-name").value;
+  const item = document.getElementById("wish-input").value;
+  const ul = document.getElementById("wish-items");
+  const li = document.createElement("li");
+  const p = document.createElement("p");
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "REMOVE";
+  p.textContent = name + " wishes for " + item;
+  li.append(p, removeBtn);
+
+  removeBtn.addEventListener("click", (e) => {
+    e.target.parentElement.remove();
+    localStore();
+  });
+  ul.append(li);
+  document.getElementById("wish-input").value = "";
+  localStore();
 }
 
-function login() {
-  let username = document.getElementById("login-username").value;
-  document.getElementById("username").innerHTML = username;
-  document.getElementById("login-form").style.display = "none";
-  document.getElementById("wish-list").style.display = "block";
+const button = document.getElementById("wish-button");
+button.addEventListener("click", () => {
+  addWish();
+});
+
+function localStore() {
+  let list = document.querySelectorAll("li");
+  let storedList = [];
+  list.forEach((li) => {
+    storedList.push({
+      text: li.firstChild.textContent,
+    });
+  });
+  localStorage.setItem("isTask", JSON.stringify(storedList));
 }
-function displayWishes() {
-  const list = "";
-  for (const i = 0; i < wishList.length; i++) {
-    list += "<li>" + wishList[i] + "</li>";
+
+function getWish() {
+  const storedItem = JSON.parse(localStorage.getItem("isTask"));
+  if (storedItem) {
+    storedItem.forEach((task) => {
+      const ul = document.getElementById("wish-items");
+      const li = document.createElement("li");
+      const p = document.createElement("p");
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "REMOVE";
+      p.textContent = task.text;
+      li.append(p, removeBtn);
+      ul.append(li);
+
+      removeBtn.addEventListener("click", (e) => {
+        e.target.parentElement.remove();
+        localStore();
+      });
+    });
   }
-  document.getElementById("wish-items").innerHTML = list;
+  document.getElementById("wish-input").value = "";
+  localStore();
 }
 
-document
-  .getElementById("login-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    login();
-  });
-document
-  .getElementById("add-wish-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    addWish();
-  });
+window.addEventListener("load", () => {
+  getWish();
+});

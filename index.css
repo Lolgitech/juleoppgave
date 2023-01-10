@@ -1,12 +1,27 @@
 body {
+  background-image: url(https://images.unsplash.com/photo-1512389055488-8d82cb26ba6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGNocmlzdG1hcyUyMHdpc2hlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60);
   margin: 0;
   padding: 0;
-  background-color: red;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
 }
 .background {
+  image-resolution: 100px;
   width: 100%;
   height: 1200%;
   background-size: 400% 400%;
   position: absolute;
   z-index: -1;
+}
+
+h1 {
+  font-family: "brush script MT";
+}
+
+h2 {
+  font-family: "lucida handwriting";
+  color: rgb(9, 110, 9);
 }
