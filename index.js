@@ -53,10 +53,19 @@ function getWish() {
       });
     });
   }
-  document.getElementById("wish-input").value = "";
-  localStore();
 }
+document.getElementById("wish-input").value = "";
+localStore();
 
 window.addEventListener("load", () => {
   getWish();
 });
+
+window.onload = function () {
+  function myAudio() {
+    const audio = document.getElementById("audio");
+    audio.play();
+  }
+
+  document.getElementById("audio").addEventListener("click", myAudio);
+};
