@@ -54,6 +54,13 @@ function getWish() {
     });
   }
 }
+function addToList() {
+  let inputValue = document.getElementById("wish-input").value;
+  let ul = document.getElementById("wish-items");
+  let li = document.createElement("li");
+  li.appendChild(document.createTextNode(inputValue));
+  ul.appendChild(li);
+}
 document.getElementById("wish-input").value = "";
 localStore();
 
@@ -75,7 +82,6 @@ function myAudio() {
 
 document.getElementById("wish-name").addEventListener("focus", myAudio);
 
-
 /*
 const nameInput = document.querySelector('.wish-name'); // Select the name input
 const nameDisplay = document.querySelector('.name-display'); // Select the name display
@@ -84,9 +90,6 @@ nameInput.addEventListener('input', e => {
     nameDisplay.textContent = e.target.value; 
 
 });*/
-
-
-
 
 /*const saveBtn = document.querySelector(".save-btn"); // Select the save button
 saveBtn.addEventListener("click", () => {
