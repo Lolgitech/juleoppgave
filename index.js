@@ -69,6 +69,11 @@ window.onload = function () {
 
   document.getElementById("audio").addEventListener("click", myAudio);
 };
+function myAudio() {
+  audio.play();
+}
+
+document.getElementById("wish-name").addEventListener("focus", myAudio);
 
 
 /*
