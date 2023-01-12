@@ -69,3 +69,40 @@ window.onload = function () {
 
   document.getElementById("audio").addEventListener("click", myAudio);
 };
+
+
+/*
+const nameInput = document.querySelector('.wish-name'); // Select the name input
+const nameDisplay = document.querySelector('.name-display'); // Select the name display
+
+nameInput.addEventListener('input', e => {
+    nameDisplay.textContent = e.target.value; 
+
+});*/
+
+
+
+
+/*const saveBtn = document.querySelector(".save-btn"); // Select the save button
+saveBtn.addEventListener("click", () => {
+  const name = document.querySelector(".wish-name").value; // Get the current name value
+  const wishItems = document.querySelectorAll(".wish-items li"); // Get all the wish items
+
+  // Convert the wish items to an array
+  const wishes = Array.from(wishItems).map((item) => item.textContent);
+  localStorage.setItem("name", name); // Save the name in local storage
+  localStorage.setItem("wishes", JSON.stringify(wishes)); // Save the wish items in local storage
+});
+
+html : <div id="wish">
+  <input class="wish-input" placeholder="Enter a wish" />
+  <button class="wish-button">Add Wish</button>
+  <button class="save-btn">Save</button> <!-- Save button -->
+  <ul class="wish-items"></ul>
+</div>
+<div class="saved-data">
+  <p>Saved Name: <span id="saved-name"></span></p>
+  <p>Saved Wishes: <span id="saved-wishes"></span></p>
+</div>
+
+*/

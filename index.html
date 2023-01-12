@@ -11,24 +11,25 @@
   <body>
     <h1>My Christmas Wish List</h1>
     <h2>Welcome, <input id="wish-name" />!</h2>
-
-    <audio
-      id="audio"
-      source
-      src="../juleoppgave/music/Keith Jarrett-At The Blue Note-05-When I Fall in Love.MP3"
-      href="C:\Users\Remi\ny kodemappe\juleinnlevering\juleoppgave\music\Keith Jarrett-At The Blue Note-05-When I Fall in Love.MP3"
-      type="audio/MP3"
-      controls=""
-    ></audio>
-
-    <div id="wish">
-      <!-- <input type="text" id="login-username" placeholder="Username" />
-        <button type="submit" id="login-button">Login</button> -->
-
-      <input id="wish-input" placeholder="Enter a wish" />
-      <button id="wish-button">Add Wish</button>
-      <ul id="wish-items"></ul>
+    
+    <div class="background"></div>
+    <div class="box" style="opacity: 0.5">
+      <span class="text"></span>
+      <div class="audio">
+        <audio
+          id="audio"
+          src="../juleoppgave/music/Keith Jarrett-At The Blue Note-05-When I Fall in Love.MP3"
+          controls
+        ></audio>
+      </div>
+      <div class="positioning"></div>
+      <div class="login-form"></div>
+      <div id="wish">
+        <input id="wish-input" placeholder="Enter a wish" />
+        <button id="wish-button">Add Wish</button>
+        <ul id="wish-items"></ul>
+      </div>
     </div>
-    <div id="login-form"></div>
-  </body>
-</html>
+    </body>
+  
+   
