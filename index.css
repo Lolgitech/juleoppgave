@@ -78,10 +78,13 @@ h2 {
   color: rgb(9, 110, 9);
 }
 
-.wish-input {
+#wish-input {
   font-family: "lucida handwriting";
   color: rgb(9, 110, 9);
   border-radius: 20px;
+  font-size: 1rem;
+  
+  
 }
 
 .wish-button {
@@ -93,7 +96,7 @@ h2 {
 #login-form {
   font-family: "lucida handwriting";
   color: rgb(9, 110, 9);
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 #wish-items {
@@ -125,6 +128,7 @@ h2 {
 
 .text {
   opacity: 0;
+ 
 }
 
 .name-display {

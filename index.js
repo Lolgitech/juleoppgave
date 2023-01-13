@@ -7,6 +7,7 @@ function addWish() {
   const removeBtn = document.createElement("button");
   removeBtn.textContent = "REMOVE";
   p.textContent = name + " wishes for " + item;
+  li.setAttribute("id", "liremove");
   li.append(p, removeBtn);
 
   removeBtn.addEventListener("click", (e) => {
@@ -17,11 +18,21 @@ function addWish() {
   document.getElementById("wish-input").value = "";
   localStore();
 }
+const buttontwo = document.getElementById("mystorage");
+buttontwo.addEventListener("click", () => {
+  mystorage();
+  document.getElementById("liremove").querySelector.remove();
+});
+function mystorage() {
+  localStorage.clear();
+}
 
 const button = document.getElementById("wish-button");
 button.addEventListener("click", () => {
   addWish();
 });
+
+
 
 function localStore() {
   let list = document.querySelectorAll("li");
@@ -41,16 +52,16 @@ function getWish() {
       const ul = document.getElementById("wish-items");
       const li = document.createElement("li");
       const p = document.createElement("p");
-      const removeBtn = document.createElement("button");
-      removeBtn.textContent = "REMOVE";
+      //     const removeBtn = document.createElement("button");
+      //   removeBtn.textContent = "REMOVE";
       p.textContent = task.text;
-      li.append(p, removeBtn);
+      li.append(p);
       ul.append(li);
 
-      removeBtn.addEventListener("click", (e) => {
-        e.target.parentElement.remove();
-        localStore();
-      });
+      // removeBtn.addEventListener("click", (e) => {
+      //   e.target.parentElement.remove();
+      // localStore();
+      // });
     });
   }
 }
@@ -58,11 +69,12 @@ function addToList() {
   let inputValue = document.getElementById("wish-input").value;
   let ul = document.getElementById("wish-items");
   let li = document.createElement("li");
+  li.setAttribute("id", "liremove");
   li.appendChild(document.createTextNode(inputValue));
   ul.appendChild(li);
 }
-document.getElementById("wish-input").value = "";
-localStore();
+//document.getElementById("wish-input").value = "";
+//localStore();
 
 window.addEventListener("load", () => {
   getWish();
